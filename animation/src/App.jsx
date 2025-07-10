@@ -4,14 +4,15 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import AnimatedCardGrid from './AnimatedCardGrid'
 import Expand from './Expand'
+import ExplodingImages from './ExplodingImages'
 
 function App() {
 
 
   return (
     <>
-    <div className='bg-gray-100 w-screen h-screen flex items-center justify-center'>
-      <Expand/>
+    <div className='w-screen h-screen flex items-center justify-center'>
+      <ExplodingImages/>
     </div>
     </>
   )

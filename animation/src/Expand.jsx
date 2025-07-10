@@ -44,7 +44,7 @@ export default function Expand() {
         className="w-[900px] h-[600px] rounded-full absolute top-1/2 left-1/2
                       transform -translate-x-1/2 -translate-y-1/2
                       transition-transform duration-300
-                      group-hover:scale-110
+                      group-hover:scale-130 group-hover: small-bounce
                       flex items-center justify-center overflow-visible"
       >
         {/* Blue Oval */}
@@ -75,7 +75,7 @@ export default function Expand() {
       key={`blue-${idx}`}
       src={img}
       alt=""
-      className="absolute w-8 h-8 object-cover rounded-full hover:animate-bounce"
+      className="absolute w-20 h-20 object-cover"
       style={{
         left: `calc(50% + ${x}px)`,
         top: `calc(50% + ${y}px)`,
@@ -96,7 +96,7 @@ export default function Expand() {
       key={`red-${idx}`}
       src={img}
       alt=""
-      className="absolute w-10 h-10 object-cover rounded-full z-0 hover:animate-bounce"
+      className="absolute w-15 h-15 object-cover z-0"
       style={{
         left: `calc(50% + ${x}px)`,
         top: `calc(50% + ${y}px)`,
