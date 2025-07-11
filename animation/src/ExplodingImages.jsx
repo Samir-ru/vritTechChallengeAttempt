@@ -31,19 +31,19 @@ const ExplodingImages = () => {
         <div className="z-10 text-center">
           <p>Hear How They Level Up Their Game!</p>
           <h1 className="text-2xl font-bold mb-4 text-center">Skills <span className='text-green-700'>Masters</span> Unite! 🤝</h1>
-          <button className='font-bold hover:animate-pulse cursor-pointer flex gap-2 justify-center items-center mx-auto hover:gap-3 transition-all'> View all testimonial <span>-{">"}</span></button>
+          <button className='font-bold hover:animate-pulse cursor-pointer flex gap-2 justify-center items-center mx-auto hover:gap-3 transition-all'> View all testimonial <span>→ </span></button>
         </div>
 
         {/* Floating images in elliptical pattern */}
         {images.map((img, i) => {
           const angle = (360 / images.length) * i;
 
-          // Use different radii for odd/even
+// ussing different radius for gifs and images
           const baseX = i % 2 === 0 ? 240: 160;
-          const baseY = i % 2 === 0 ? 180: 120;
+          const baseY = i % 2 === 0 ? 200: 150;
 
           const radiusX = hovered ? baseX + 150 : baseX;
-          const radiusY = hovered ? baseY + 20 : baseY;
+          const radiusY = hovered ? baseY + 100 : baseY;
 
           const x = radiusX * Math.cos((angle * Math.PI) / 180);
           const y = radiusY * Math.sin((angle * Math.PI) / 180);
@@ -53,7 +53,7 @@ const ExplodingImages = () => {
               key={i}
               src={img}
               alt={`img-${i}`}
-              className="absolute w-14 h-14 rounded-2xl object-cover shadow-lg"
+              className="absolute w-17 h-17 rounded-3xl object-cover shadow-lg  duration-75 transition-all ease-in-out"
               initial={{ x: 0, y: 0 }}
               animate={{
                 x,

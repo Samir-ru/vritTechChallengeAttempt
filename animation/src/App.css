@@ -1,13 +1,29 @@
 @import "tailwindcss";
-@keyframes smallBounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px); /* smaller bounce */
-  }
+
+
+
+@theme{
+    --color-DarkRed: #C33241;
+    --color-lightRed: #F9EBEC;
+    --color-brightRed: #F45B5B;
+    --color-paleGreen: #5492A0;
+    --color-palePurple: #6C64A8;
+    --color-brownishYellow: #A88964;
 }
 
-.small-bounce {
-  animation: smallBounce 1.5s ease-in-out infinite;
+@layer{
+   .straight{
+    @apply rotate-[-90deg]
+   }
+
+   .cutOutLeft{
+    @apply absolute top-[50%] left-0 translate-y-[-50%] translate-x-[-30%] rounded-full bg-white text-black p-2 w-20 h-15 flex justify-end items-center
+   }
+   .cutOutRight{
+    @apply absolute top-[50%] right-0 translate-x-[30%] rounded-full bg-gray-100 text-black p-2 translate-y-[-50%] w-20 h-15
+   }
+   .cutBtn{
+    @apply shadow-xl rounded-full w-10 h-10;
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.15);
+   }
 }
