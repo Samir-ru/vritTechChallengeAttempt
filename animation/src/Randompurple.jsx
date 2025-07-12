@@ -22,13 +22,9 @@ export default function Randompurple() {
   };
 
   return (
-    <div
-      className="h-full w-full"
-      onClick={handleClick}
-    >
       <div
-        className="grid h-full w-full grid-cols-22 grid-rows-8"
-
+        className="grid h-full w-screen grid-cols-22 grid-rows-8"
+              onClick={handleClick}
       >
         {Array.from({ length: TOTAL_CELLS }).map((_, index) => (
           <div
@@ -39,6 +35,5 @@ export default function Randompurple() {
           />
         ))}
       </div>
-    </div>
   );
 }

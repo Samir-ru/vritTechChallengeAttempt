@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import techStack from "./assets/techstack.png";
 
-// JSON data only used for content, no colors
 const courseData = [
   {
     id: 0,
@@ -32,9 +31,9 @@ export default function AnimatedCardGrid() {
   const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 });
 
   return (
-    <div className="w-9/12">
+    <div className="w-11/12 md:w-9/12 mx-auto">
       <div
-        className="grid grid-cols-4 gap-4 relative z-10 auto-rows-fr"
+        className="grid grid-cols-2 md:grid-cols-4 gap-4 relative z-10 auto-rows-fr"
         style={{ height: "520px" }}
       >
         {courseData.map((card, index) => {
@@ -53,7 +52,7 @@ export default function AnimatedCardGrid() {
                 });
                 setActiveCard(index);
               }}
-              className="cursor-pointer relative overflow-hidden rounded-xl p-6 flex items-center justify-center h-full bg-lightRed" // ✅ changed min-h to h-full
+              className="cursor-pointer relative overflow-hidden rounded-xl p-6 flex items-center justify-center h-full bg-lightRed"
               style={{
                 gridColumn: isActive ? "span 2" : "span 1",
               }}
@@ -83,47 +82,46 @@ export default function AnimatedCardGrid() {
                       exit={{ opacity: 0, x: -100 }}
                       transition={{ duration: 0.6 }}
                       className="text-white font-bold absolute right-0"
-                      ease="easeInOut"
                     >
                       {card.button}
                     </motion.button>
                     <motion.img
                       src={techStack}
                       initial={{ opacity: 0, x: -100, y: 100 }}
-                      animate={{ opacity: 1, x: 50, y:100 }}
-                      exit={{ opacity: 0, x: -100,}} 
-                      transition={{ duration: 0.8}}
-                      className="absolute" // center horizontally
+                      animate={{ opacity: 1, x: 50, y: 100 }}
+                      exit={{ opacity: 0, x: -100 }}
+                      transition={{ duration: 0.8 }}
+                      className="absolute w-28 sm:w-36 md:w-48 lg:w-56"
                     />
                   </>
                 )}
 
                 {/* Count */}
                 <h1
-                  className={`text-[5rem] font-bold z-10 self-end ${
+                  className={`font-bold z-10 self-end ${
                     isActive ? "text-white" : "text-DarkRed"
-                  }`}
+                  } text-[2.5rem] md:text-[3.6rem]`}
                 >
-                  {card.count} <sup>+</sup>
+                  {card.count}+
                 </h1>
 
                 {/* Title + Subtitle */}
                 <div
-                  className={`absolute bottom-[1.5rem] left-[30%] origin-top-left transigion-all duration-300 ${
+                  className={`absolute bottom-[1.5rem] left-[30%] origin-top-left transition-all duration-300 ${
                     !isActive ? "straight" : ""
                   }`}
                 >
                   <h2
-                    className={`text-2xl font-bold ${
+                    className={`font-bold ${
                       isActive ? "text-white" : "text-DarkRed"
-                    }`}
+                    } text-base md:text-xl`}
                   >
                     {card.title}
                   </h2>
                   <p
-                    className={`text-sm ${
+                    className={`${
                       isActive ? "text-white" : "text-DarkRed"
-                    }`}
+                    } text-xs md:text-xs`}
                   >
                     {card.subtitle}
                   </p>

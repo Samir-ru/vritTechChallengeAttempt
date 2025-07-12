@@ -2,6 +2,7 @@
 
 
 
+
 @theme{
     --color-DarkRed: #C33241;
     --color-lightRed: #F9EBEC;
@@ -11,19 +12,90 @@
     --color-brownishYellow: #A88964;
 }
 
-@layer{
+@layer components{
    .straight{
     @apply rotate-[-90deg]
    }
 
    .cutOutLeft{
-    @apply absolute top-[50%] left-0 translate-y-[-50%] translate-x-[-30%] rounded-full bg-white text-black p-2 w-20 h-15 flex justify-end items-center
+    @apply absolute top-[50%] left-0 translate-y-[-50%] translate-x-[-30%] rounded-full bg-white text-black p-2 xl:w-20 md:h-10 xl:h-15 md:w-15 flex justify-end items-center
    }
    .cutOutRight{
-    @apply absolute top-[50%] right-0 translate-x-[30%] rounded-full bg-gray-100 text-black p-2 translate-y-[-50%] w-20 h-15
+    @apply absolute top-[50%] right-0 translate-x-[30%] rounded-full bg-gray-100 text-black p-2 translate-y-[-50%] md:h-10 xl:h-15 xl:w-20 md:w-15 flex justify-start items-center
    }
    .cutBtn{
-    @apply shadow-xl rounded-full w-10 h-10;
+    @apply shadow-xl rounded-full xl:w-10 xl:h-10 w-6 h-6 flex justify-center items-center;
     box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.15);
    }
+   .AppContainer{
+    @apply w-screen h-screen flex items-center justify-center overflow-x-hidden;
 }
+ .heading-subtitle {
+    @apply text-sm sm:text-base md:text-base;
+  }
+
+  .heading-title {
+    @apply text-lg sm:text-xl md:text-xl font-bold;
+  }
+
+  .box-heading {
+    @apply text-base sm:text-xl md:text-lg font-bold;
+  }
+
+  .box-subheading {
+    @apply text-xs sm:text-sm md:text-sm font-semibold mb-1;
+  }
+
+  .box-description {
+    @apply text-xs sm:text-sm md:text-xs font-thin;
+  }
+
+  .box-image {
+    @apply absolute bottom-[-20%] h-32 sm:h-36 md:h-[250px]  xl:h-[400px] object-contain;
+  }
+
+  .box-image-left {
+    @apply left-[-8%];
+  }
+
+  .box-image-right {
+    @apply right-[-8%];
+  }
+
+  .box-content {
+    @apply w-6/10 absolute md:w-1/2;
+  }
+
+  .box-left {
+    @apply left-3 text-left;
+  }
+
+  .box-right {
+    @apply right-3 text-right;
+  }
+
+  .box1-caption {
+    @apply m-2 text-right text-sm sm:text-base md:text-base;
+  }
+
+  .box2-caption {
+    @apply m-2 text-sm sm:text-base md:text-base;
+  }
+
+  .box1-wow1 {
+    @apply absolute top-1/2 left-[50%] transform -translate-x-1/2 -translate-y-1/2 h-16 sm:h-20 md:h-20 scale-x-[-1] rotate-45;
+  }
+
+  .box1-wow2 {
+    @apply absolute top-3 left-5 h-16 sm:h-20 md:h-20 rotate-45;
+  }
+
+  .box1-under1 {
+    @apply absolute bottom-[-10%] left-[-1%] h-32 sm:h-40 md:h-48 xl:h-74;
+  }
+
+  .box2-under2 {
+    @apply absolute bottom-[-10%] right-[-1%] h-32 sm:h-40 md:h-48  xl:h-74;
+  }
+}
+

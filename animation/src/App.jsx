@@ -1,22 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import AnimatedCardGrid from './AnimatedCardGrid'
-import ExplodingImages from './ExplodingImages'
-import FadeAway from './FadeAway'
-import Randompurple from './Randompurple'
+import "./App.css";
+import { BrowserRouter as Router } from "react-router-dom";
+import AllRoutes from "./AllRoutes";
+import Navbar from "./Navbar";
 
 function App() {
-
-
   return (
-    <>
-    <div className='w-screen h-screen flex items-center justify-center'>
-      <AnimatedCardGrid/>
-    </div>
-    </>
-  )
+      <Router>
+      <AllRoutes/>
+      <Navbar/>
+      </Router>
+  );
 }
 
-export default App
+export default App;
